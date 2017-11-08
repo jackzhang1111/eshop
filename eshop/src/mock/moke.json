@@ -346,5 +346,12 @@
         "oldPrice":"21"
       }
     ]
+  },
+  "classifys":{
+    "server":[
+      {
+        "navName":"为你推荐"
+      }
+    ]
   }
 }

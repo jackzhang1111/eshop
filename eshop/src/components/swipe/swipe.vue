@@ -1,10 +1,10 @@
 <template>
   <div class="CarouselWrap">
     <mt-swipe :auto="2000" >
-      <mt-swipe-item><img src="../../img/Carousel1.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="../../img/Carousel2.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="../../img/Carousel3.jpg" alt=""></mt-swipe-item>
-      <mt-swipe-item><img src="../../img/Carousel4.jpg" alt=""></mt-swipe-item>
+      <mt-swipe-item><img :src="home.Carousel1Jpg" alt=""></mt-swipe-item>
+      <mt-swipe-item><img :src="home.Carousel2Jpg" alt=""></mt-swipe-item>
+      <mt-swipe-item><img :src="home.Carousel3Jpg" alt=""></mt-swipe-item>
+      <mt-swipe-item><img :src="home.Carousel4Jpg" alt=""></mt-swipe-item>
     </mt-swipe>
   </div>
 </template>
@@ -12,6 +12,9 @@
 <script>
   import { Swipe, SwipeItem } from 'mint-ui'
   export default{
+    props:{
+      home: Object
+    },
     components:{
       Swipe:Swipe,
       SwipeItem:SwipeItem

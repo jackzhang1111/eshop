@@ -33,20 +33,6 @@
     position: relative;
     width: 100%;
     height:100%;
-    .eHeader{
-      position: absolute;
-      top:0;
-      left:0;
-      z-index: 2;
-    }
-    .eFooter{
-      position: absolute;
-      bottom:0;
-      left:0;
-      width: 100%;
-      background-color: #fff;
-      z-index: 2;
-    }
   }
 
 

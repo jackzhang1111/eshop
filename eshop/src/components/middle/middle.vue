@@ -5,7 +5,7 @@
           <img :src="home.activityJpg" alt="">
         </div>
         <div class="carousel">
-          <swipe></swipe>
+          <swipe :home="home"></swipe>
         </div>
         <div class="banner2">
           <img :src="home.banner2Jpg" alt="">
@@ -64,11 +64,11 @@
           <div class="surprise-up">
             <img :src="home.supricePng" alt="">
             <span>距离本场结束</span>
-            <span class="timer">时</span>
+            <span class="timer">{{hour}}时</span>
             <span>:</span>
-            <span class="timer">分</span>
+            <span class="timer">{{minute}}分</span>
             <span>:</span>
-            <span class="timer">秒</span>
+            <span class="timer">{{second}}秒</span>
             <img :src="home.morePng" alt="">
           </div>
           <div class="surprise-down" ref="bPicScroll">
@@ -241,7 +241,10 @@
           <img :src="home.bigpic3Jpg" alt="">
         </div>
         <div class="video">
-          <img :src="home.videoJpg" alt="">
+          <img v-if="play" @click="isClick" :src="home.videoJpg" alt="">
+          <video v-else src="../../audio/audio.mp4" controls="controls">
+            your browser does not support the video tag
+            </video>
         </div>
         <div class="bigRed">
           <img :src="home.bigredJpg" alt="">
@@ -266,7 +269,11 @@
   export default{
     data(){
       return{
-        home:{}
+        home:{},
+        hour:3,
+        minute:0,
+        second:0,
+        play:true
       }
     },
     mounted(){
@@ -287,8 +294,13 @@
           click:true,
           scrollX: true
         })
+      },
+      isClick(){
+        this.play = false
+        console.log('aaa');
       }
     },
+
     components:{
       swipe,
     }
@@ -601,6 +613,10 @@
         width: 100%;
         height: 235 /@rem;
         img {
+          width: 100%;
+          height: 100%
+        }
+        video{
           width: 100%;
           height: 100%
         }

@@ -1,10 +1,18 @@
 <template>
   <div class="footer">
     <ul class="footer-list">
-      <li><a href="#" class="cssSprite1"></a></li>
-      <li><a href="#" class="cssSprite2"></a></li>
-      <li><a href="#" class="cssSprite3"></a></li>
-      <li><a href="#" class="cssSprite4"></a></li>
+      <li>
+        <router-link to="/middle" class="cssSprite1"></router-link>
+      </li>
+      <li>
+          <router-link to="/classify" class="cssSprite2"></router-link>
+      </li>
+      <li>
+        <router-link to="/shopcar" class="cssSprite3"></router-link>
+      </li>
+      <li>
+        <router-link to="/my" class="cssSprite4"></router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -17,6 +25,12 @@
   @import "../../css/common/common";
   @rem:23.4rem;
   .footer{
+      position: absolute;
+      bottom:0;
+      left:0;
+      width: 100%;
+      background-color: #fff;
+      z-index: 5;
     .footer-list{
       height: 55 /@rem;
       overflow: hidden;
@@ -28,19 +42,31 @@
         line-height: 90/@rem;
         .cssSprite1{
           .icons();
-          background-position: -8/@rem -2/@rem;
+          background-position: -90/@rem 0/@rem;
+          &.active{
+            background-position: 3/@rem -2/@rem;
+          }
         }
         .cssSprite2{
           .icons();
-          background-position: -90/@rem -49/@rem;
+          background-position: -90/@rem -48/@rem;
+          &.active{
+            background-position: 0/@rem -48/@rem;
+          }
         }
         .cssSprite3{
           .icons();
-          background-position: -90/@rem -95/@rem;
+          background-position: -90/@rem -92/@rem;
+          &.active{
+            background-position: 0/@rem -92/@rem;
+          }
         }
         .cssSprite4{
           .icons();
-          background-position: -90/@rem -140/@rem;
+          background-position: -90/@rem -138/@rem;
+          &.active{
+            background-position: 0/@rem -138/@rem;
+          }
         }
       }
     }

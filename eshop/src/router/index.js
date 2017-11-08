@@ -1,13 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import middle from '../components/middle/middle.vue'
-import cosmetology from '../components/header/cosmetology/cosmetology.vue'
-import dogfoot from '../components/header/dogfoot/dogfoot.vue'
-import egression from '../components/header/egression/egression.vue'
-import hospital from '../components/header/hospital/hospital.vue'
-import trappings from '../components/header/trappings/trappings.vue'
-import plaything from '../components/header/plaything/plaything.vue'
-
+import classify from '../components/classify/classify.vue'
+import shopcar from '../components/shopcar/shopcar.vue'
+import my from '../components/my/my.vue'
 Vue.use(VueRouter);
 
 
@@ -23,30 +19,17 @@ export default new VueRouter({
       component: middle
     },
     {
-      path:'/cosmetology',
-      component:cosmetology
+      path: '/classify',
+      component: classify
     },
     {
-      path:'/dogfoot',
-      component:dogfoot
+      path:'/shopcar',
+      component:shopcar
     },
     {
-      path:'/egression',
-      component:egression
-    },
-    {
-      path:'/hospital',
-      component:hospital
-    },
-    {
-      path:'/plaything',
-      component:plaything
-    },
-    {
-      path:'/trappings',
-      component:trappings
+      path:'/my',
+      component:my
     }
-
   ]
 })
 

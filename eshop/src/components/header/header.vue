@@ -10,7 +10,8 @@
     </div>
     <div class="header-down" ref="vau">
       <ul class="header-list" >
-        <li v-if="nav.menuNames" v-for="menuName in nav.menuNames">{{menuName}}</li>
+        <li v-if="nav.menuNames" v-for="(menuName,index) in nav.menuNames"
+            :class="{greenCo: greenCoIndex===index}" @click="clickColor(index)">{{menuName}}</li>
       </ul>
     </div>
   </div>
@@ -22,7 +23,9 @@
   export default{
     data () {
       return {
-        nav:{}
+        nav:{},
+        greenCoIndex:0
+
       }
     },
     mounted(){
@@ -43,7 +46,12 @@
           click:true,
           scrollX: true
         })
+      },
+      clickColor(index){
+        this.greenCoIndex = index
+        console.log(index);
       }
+
     }
 
 
@@ -53,6 +61,10 @@
 <style lang="less" rel="stylesheet/less">
   @rem:23.4rem;
   .header{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
     width: 100%;
     height: 87/@rem;
     .header-up{
@@ -95,14 +107,9 @@
           height: 36 /@rem;
           text-align: center;
           line-height:36 /@rem;
-          a{
-            span{
-              font-size: 14 /@rem;
-              color: #898989;
-              &.clickColor{
-                color: green;
-              }
-            }
+          &.greenCo{
+            color: #2b542c;
+            background-color: pink;
           }
         }
       }

@@ -5,5 +5,4 @@ import data from './moke.json';
 Mock.mock("/api/data",{
   code:0,
   data:data.data
-})
-
+});
